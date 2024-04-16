@@ -1,0 +1,26 @@
+- name: writing yaml script for mongodb
+  hosts: mongodb.praveenaws.online
+  become: yes
+  tasks:
+  - name: copying mongo repo 
+    ansible.builtin.copy:
+      src: mongodb.repo
+      dest: /etc/yum.repos.d/mongo.repo
+
+  - name: Install mongodb 
+    ansible.builtin.package:
+      name: mongodb-org
+      state: present
+
+  - name: Enable service
+    ansible.builtin.service:
+      name: mongod
+      state: started
+      enabled: yes
+
+  - name: Change host name 
+    ansible.builtin.replace:
+      path: /etc/mongod.conf
+      regexp: '127.0.0.1'
+      replace: '0.0.0.0'
+  
