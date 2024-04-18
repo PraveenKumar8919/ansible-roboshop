@@ -3,7 +3,7 @@
   hosts: catalogue.praveenaws.online
   become: yes
   tasks: 
-  - name: diaable old nodejs & enable new nodejs
+  - name: disable old nodejs & enable new nodejs
     ansible.builtin.shell: dnf module disable nodejs -y ; dnf module enable nodejs:18 -y
 
   - name: Install nodejs
