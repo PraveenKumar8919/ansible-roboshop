@@ -1,6 +1,8 @@
 - name: Writing yaml code for shipping
   hosts: shipping
   become: yes
+  vars:
+    mysql_password: Roboshop@1
   tasks: 
   - name: Install maven dependencies
     ansible.builtin.dnf:
