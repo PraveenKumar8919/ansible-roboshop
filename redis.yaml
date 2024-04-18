@@ -1,6 +1,6 @@
 # Configuring redis yaml
-- name: reddis
-  hosts: reddis
+- name: redis
+  hosts: redis
   become: yes
   tasks:
   - name : install remi release
