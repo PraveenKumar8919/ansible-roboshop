@@ -1,5 +1,5 @@
 - name: writing yaml script for mongodb
-  hosts: mongodb.praveenaws.online
+  hosts: mongodb
   become: yes
   tasks:
   - name: copying mongo repo 
