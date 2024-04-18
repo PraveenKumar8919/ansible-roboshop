@@ -9,13 +9,13 @@
 
   - name: Removing default nginx we server content
     ansible.builtin.file:
-    path: /usr/share/nginx/html/*
-    status: absent
+      path: /usr/share/nginx/html/*
+      status: absent
 
   - name: Creating directory
     ansible.builtin.file:
-    path: /usr/share/nginx/html
-    status: directory
+      path: /usr/share/nginx/html
+      status: directory
 
   - name: Downnload we app from s3
     ansible.builtin.get_url:
@@ -24,9 +24,9 @@
 
   - name: Extract application
     ansible.builtin.unarchive:
-    src: /tmp/web.zip
-    dest: /usr/share/nginx/html
-    remote_src: yes
+      src: /tmp/web.zip
+      dest: /usr/share/nginx/html
+      remote_src: yes
 
   - name: Copying roboshop configutation
     ansible.builtin.copy:
