@@ -1,6 +1,6 @@
 # writing catalogue service yaml code
 - name: catalogue yaml script
-  hosts: catalogue.praveenaws.online
+  hosts: catalogue
   become: yes
   tasks: 
   - name: disable old nodejs & enable new nodejs
