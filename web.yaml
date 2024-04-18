@@ -36,6 +36,6 @@
   - name: Start and enable nginx
     ansible.builtin.package:
       name: nginx
-      status: restarted
+      state: restarted
       enabled: yes
   
