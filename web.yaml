@@ -5,17 +5,17 @@
   - name: Installing nginx server
     ansible.builtin.dnf:
       name: nginx
-      status: present
+      state: present
 
   - name: Removing default nginx we server content
     ansible.builtin.file:
       path: /usr/share/nginx/html/*
-      status: absent
+      state: absent
 
   - name: Creating directory
     ansible.builtin.file:
       path: /usr/share/nginx/html
-      status: directory
+      state: directory
 
   - name: Downnload we app from s3
     ansible.builtin.get_url:
