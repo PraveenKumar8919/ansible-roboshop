@@ -1,0 +1,6 @@
+#payment configuration
+- name: payment
+  hosts: payment
+  become: yes
+  tasks: 
+  - name: 
