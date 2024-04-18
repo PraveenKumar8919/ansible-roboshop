@@ -24,7 +24,7 @@
       path: /app
       state: directory
 
-  - name: downloading  cart application from s3
+  - name: downloading cart application from s3
     ansible.builtin.get_url:
       url: https://roboshop-builds.s3.amazonaws.com/cart.zip
       dest: /tmp

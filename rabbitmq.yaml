@@ -1,0 +1,21 @@
+# configuring rabbit mq server
+- name: rabbitmq
+  hosts: rabbitmq
+  become: yes
+  tasks:
+  - name: Configuring yum repos
+    ansible.builtin.shell: https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash
+
+  - name : configuring yum repos for rabbitmq 
+    ansible.builtin.shell: https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash
+
+  - name: install rabbitmq server
+    ansible.builtin.dnf:
+      name: rabbitmq-server
+      state: present
+
+  - name: Start and enable nginx
+    ansible.builtin.service:
+      name: rabbitmq-server
+      state: restarted
+      enabled: yes
